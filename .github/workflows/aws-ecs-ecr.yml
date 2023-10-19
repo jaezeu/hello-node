@@ -32,10 +32,11 @@ on:
 
 env:            
   AWS_REGION: ap-southeast-1           
-  ECR_REPOSITORY: jazeel-node-app       
+  ECR_REPOSITORY: test-ecr       
   ECS_SERVICE: ecsdemo         
   ECS_CLUSTER: ecs-tf                     
-  CONTAINER_NAME: ecs-sample         
+  CONTAINER_NAME: ecs-sample
+  TASKDEF: ecsdemo
                                                
 
 # permissions:
@@ -74,7 +75,7 @@ jobs:
     
     - name: Download task definition
       run: |
-        aws ecs describe-task-definition --task-definition ecsdemo --query taskDefinition > task-definition.json
+        aws ecs describe-task-definition --task-definition ecsdemo --query ${{ env.TASKDEF }} > task-definition.json
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
