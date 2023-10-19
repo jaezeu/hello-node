@@ -32,7 +32,7 @@ on:
 
 env:            
   AWS_REGION: ap-southeast-1           
-  ECR_REPOSITORY: test-ecr       
+  ECR_REPOSITORY: test/testecr       
   ECS_SERVICE: ecsdemo         
   ECS_CLUSTER: ecs-tf                     
   CONTAINER_NAME: ecs-sample
