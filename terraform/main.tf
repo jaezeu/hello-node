@@ -50,7 +50,7 @@ module "ecs" {
       assign_public_ip = true
       deployment_minimum_healthy_percent = 100
       subnet_ids = flatten(data.aws_subnets.public.ids)
-      security_group_ids  = ["sg-01adb0fa94b766534"]
+      security_group_ids  = ["sg-0d287f658e1752c9a"]
     }
   }
 }
